@@ -1,7 +1,0 @@
-Code for our paper "Towards Optimal Surrogate Models for Unsupervised Anomaly Detection"
-
-dean.py implements a dean ensemble and can be executed to train and evaluate the dean ensemble on the provided cardio.npz dataset.
-
-The folder Fairness contains modifications of dean to assure Fairness in the predictions.
-
-For our competitors we use pyod when possible, https://github.com/boschresearch/NeuTraL-AD/ for NeuTral and https://github.com/vicliv/DTE DTE and some competitors

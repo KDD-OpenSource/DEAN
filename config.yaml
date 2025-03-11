@@ -1,0 +1,21 @@
+dataset: "data/Aglass.npz"          # Path to the dataset file (.npz)
+
+dean_params:
+  learning_rate: 0.0001             # Learning rate for the optimizer
+  batch_size: 512                   # Batch size for training
+  epochs: 50                        # Number of training epochs
+  model_count: 100                  # Number of submodels in the ensemble
+  normalize: 1                      # Normalization method (0: none, 1: min-max, 2: mean-std)
+  bag: 200                          # Number of features to use per submodel (feature bagging)
+  neurons: [256, 256, 256]          # Neurons in each hidden layer
+  dropout_rate: 0                   # Dropout rate for hidden layers (0 means no dropout)
+  activation: "relu"                # Activation function for hidden layers
+  patience: 10                      # Early stopping patience (number of epochs with no improvement)
+  restore_best_weights: false       # Whether to restore best weights after early stopping
+  power: 1                          # Power parameter used in the loss function
+  bias: true                        # Whether to include bias in hidden layers
+  output_bias: false                # Whether to include bias in the output layer
+  output_activation: "selu"         # Activation function for the output layer
+  q_strat: true                     # Prediction strategy: compare against training mean if true
+  ensemble_power: 9                 # Power for combining submodel predictions in the ensemble
+  parallelize: 1                    # Number of parallel processes to use for training
