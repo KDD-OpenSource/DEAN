@@ -233,6 +233,7 @@ class DEAN:
                      for pred in preds]
         preds = np.array(preds)
         errors = np.mean(preds ** self.ensemble_power, axis=0)
+        errors = errors/np.mean(errors)
         if get_preds:
             return errors, preds
         return errors
