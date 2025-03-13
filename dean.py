@@ -84,7 +84,7 @@ class DEAN:
         self.ensemble_power = ensemble_power
         self.parallelize = parallelize
 
-    def _normalize_data(self, x: np.ndarray, epsilon: float = 0.000000001) -> np.ndarray:
+    def _normalize_data(self, x: np.ndarray, epsilon: float = 1e-9) -> np.ndarray:
         """
         Normalize the data based on the chosen normalization method.
 
@@ -231,9 +231,9 @@ class DEAN:
         else:
             preds = [np.mean(np.abs(pred - 1) ** self.power, axis=-1) ** (1 / self.power)
                      for pred in preds]
-        preds = np.array(preds)
+        preds = np.clip(np.array(preds), 1e-9, 1e+2)
         errors = np.mean(preds ** self.ensemble_power, axis=0)
-        errors = errors/(np.mean(errors)+0.000000001)
+        errors = errors/(np.mean(errors) + 1e-9)
         if get_preds:
             return errors, preds
         return errors
