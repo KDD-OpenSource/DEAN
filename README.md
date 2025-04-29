@@ -1,6 +1,6 @@
-## Towards Optimal Surrogate Models for Unsupervised Anomaly Detection
+## Unsupervised Surrogate Anomaly Detection
 
-This repository contains the supplementary material as well as the implementation of our paper *Towards Optimal Surrogate Models for Unsupervised Anomaly Detection*.
+This repository contains the supplementary material as well as the implementation of our paper *Unsupervised Surrogate Anomaly Detection*.
 
 ### Supplementary
 
